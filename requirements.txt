@@ -1,0 +1,8 @@
+Django==1.6.5
+python-amazon-product-api==0.2.8
+django-mongokit==0.2.6
+mutagen==1.22
+pafy
+pymongo==2.8
+lxml==3.3.5
+

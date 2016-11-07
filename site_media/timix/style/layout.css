@@ -1,0 +1,157 @@
+/******************** 
+* Base layout
+********************/
+body {
+    margin: 0;
+    padding: none;
+}
+
+#wrap {
+    width: 100%;
+    height: 100%;
+}
+
+#left_pane {
+    position: absolute;
+    width: 190px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 65px 5px 5px 5px;
+}
+
+#right_pane {
+    position: absolute;
+    top: 0;
+    left: 200px;
+    bottom: 0;
+    right: 0;
+}
+
+#state_pane {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 65px;
+    overflow: hidden;
+}
+
+#queue_pane {
+    position: absolute;
+    top: 67px;
+    left: 1px;
+    right: 0;
+    bottom: 60%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#explore_pane {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    padding: 5px 5px 5px 5px;
+}
+
+/******************** 
+* Elements
+********************/
+
+select#player {
+	font-size: 24px;
+	margin-left: 8px;
+	height: 30px;
+	width: 170px;
+}
+
+#volume {
+    margin: 10px;
+    width: 160px;
+    font-size: 10px;
+}
+
+#volume a {
+    outline:none;
+}
+
+#repeat {
+    font-size: 8px;
+    margin-top: 5px;
+    margin-left: 25px;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+ul#sortable {
+    list-style: none;
+    padding: none;
+    margin: 0;
+    cursor: move;
+}
+
+.sortme {
+    padding-left: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+} 
+
+#controls {
+    float: left;
+    margin-left: 40px;
+}
+
+#progress {
+    margin: auto;
+    width: 50%;
+    height: 20px;
+    margin-top: 10px;
+}
+
+#progress_text {
+    display: inline;
+    float: left;
+    margin-top: 3px;
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+}
+
+#playing {
+    font-size: 12px;
+    width: 50%;
+    margin: auto;
+    margin-top: 5px;
+    text-align: center;
+}
+
+#album_art {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    opacity: .15;
+}
+
+#tabs {
+    font-size: 11px;
+    height: 98%;
+}
+
+#search_tab, #browse_tab {
+    font-size: 12px;
+    overflow-y: auto;
+    height: 85%;
+}
+
+#query {
+    font-size: 24px;
+    width: 100%;
+}

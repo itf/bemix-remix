@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>HBF</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.js"></script>
+  </head>
+  <body>
+    <a href="/browse">switch to browsing</a><br>
+    <h1>Searching</h1>
+    <input id="query" type="text"><br>
+    <script type="text/javascript">
+      num_sent = 0;
+      last_received = 0;
+      last_query = "";
+      handler = function() {
+        var query = $('#query').val();
+        if (query.length < 3) {
+          $('#results').html('');
+          last_received = num_sent;
+          return;
+        }
+        if (query == last_query)
+          return;
+
+        last_query = query;
+        var request_id = ++num_sent;
+
+        $.ajax({
+          url: 'ajax_search',
+          data: {query: $('#query').val()},
+          success: function(data) {
+            if (request_id > last_received) {
+              $('#results').html(data);
+              last_received = request_id;
+            }
+          }
+        });
+      };
+      $('#query').keydown(handler);
+      $('#query').keypress(handler);
+      $('#query').keyup(handler);
+      $('#query').blur(handler);
+      handler();
+    </script>
+    Results:<br>
+    <div id="results">
+    </div>
+  </body>
+</html>

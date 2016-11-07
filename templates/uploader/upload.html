@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <title>HBF uploader</title>
+        <script type='text/javascript' src='/site_media/uploader/jquery.min.js'></script>
+        <script type='text/javascript' src='/site_media/uploader/jquery-ui.min.js'></script>
+        <script type='text/javascript' src='/site_media/uploader/jquery.fileupload.js'></script>
+        <script type='text/javascript' src='/site_media/uploader/uploader.js'></script>
+        <link href='/site_media/uploader/uploader.css' type='text/css' rel='stylesheet' />
+        <link href='/site_media/jquery/css/custom-theme/jquery-ui-1.8.13.custom.css' rel='stylesheet' type='text/css' />
+    </head>
+    <body>
+        <div class="container" id="container">
+            <div id="header" class="songRow">
+                <div class="label">Title</div>
+                <div class="label">Artist</div>
+                <div class="label">Album</div>
+                <div class="small_label"></div>
+                <div class="small_label"></div>
+            </div>
+            <div class="uploadArea" id="uploadArea">
+            </div>
+	    <div id="upload_instructions">Drag and drop to upload mp3s</div>
+            <div id="bottom_menu">
+            <input type='button' id="bottom_button"value='Save all' onClick='saveAll()' />
+            </div>
+	</div>
+    </body>
+</html>
+
+

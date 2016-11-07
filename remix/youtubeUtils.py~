@@ -1,0 +1,82 @@
+import pafy
+import collections
+def getSongFromYoutube(song_id):
+    url = song_id
+    try:
+        video = pafy.new(url)
+        a={}
+        a['title']=video.title
+        a['album']= video.rating
+        a['artist']= video.author
+        a['tracknumber']= 1
+        a['length']= video.length
+        a['path']="url"
+        a['duplicate'] = 1,
+        a['words']=""
+        a['uploader']=""
+        return a
+    except:
+        a={}
+        a['title']=song_id
+        a['album']= ""
+        a['artist']= 1
+        a['tracknumber']= 1
+        a['length']= 300
+        a['path']=""
+        a['duplicate'] = 1,
+        a['words']=""
+        a['uploader']=""
+        return a
+
+class MyDict(collections.MutableMapping):
+  def __init__(self, maxlen, *a, **k):
+    self.maxlen = maxlen
+    self.d = dict(*a, **k)
+    while len(self) > maxlen:
+      self.popitem()
+  def __iter__(self):
+    return iter(self.d)
+  def __len__(self):
+    return len(self.d)
+  def __getitem__(self, k):
+    return self.d[k]
+  def __delitem__(self, k):
+    del self.d[k]
+  def __setitem__(self, k, v):
+    if k not in self and len(self) == self.maxlen:
+      self.popitem()
+    self.d[k] = v 
+
+myDictCache = MyDict(200)
+
+def getSongFromYoutube(song_id):
+    url = song_id
+    try:
+        if (song_id not in myDictCache):
+            video = pafy.new(url)
+            a={}
+            a['title']=video.title
+            a['album']= video.rating
+            a['artist']= video.author
+            a['tracknumber']= 1
+            a['length']= video.length
+            a['path']="url"
+            a['duplicate'] = 1,
+            a['words']=""
+            a['uploader']=""
+            myDictCache[song_id]=a
+            return a
+        else:
+            return myDictCache[song_id]
+    except:
+        a={}
+        a['title']=song_id
+        a['album']= ""
+        a['artist']= 1
+        a['tracknumber']= 1
+        a['length']= 300
+        a['path']=""
+        a['duplicate'] = 1,
+        a['words']=""
+        a['uploader']=""
+        return a

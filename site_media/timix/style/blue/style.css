@@ -1,0 +1,51 @@
+body {
+    font-family: Verdana, Arial, sans;
+    font-size: 12px;
+    background: #000;
+    color: #fff;
+}
+
+#left_pane {
+    background-color: #222A3D;
+    background-image: url(/site_media/timix/images/logo-white.png);
+    background-repeat: no-repeat;
+    background-position: 27.5px 10px;
+    border-right: 1px solid #fff;
+}
+
+a {
+    color: #1C76A3;
+    text-decoration: none;
+}
+
+#state_pane {
+    background-color: #222A3D;
+    border-bottom: 1px solid #fff;
+}
+
+#queue_pane {
+    color: #DBDBDB;
+    font-size: 14px;
+}
+
+#explore_pane {
+    border-top: 1px solid #fff;
+}
+
+input, select {
+    background: #000;
+	color: #CCF;
+	border: 1px solid #FFF;
+}
+
+.highlight {
+    color: #5F96DE;
+}
+
+.row0 {
+    background: #000;
+}
+
+.row1 {
+    background: #262D33;
+}

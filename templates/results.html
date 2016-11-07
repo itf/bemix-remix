@@ -1,0 +1,13 @@
+Folders:<br>
+{% for file in results %}
+{% if file.type == 'folder' %}
+<a class="browse" href="/browse/{{file.path}}">{{ file.path }}</a><br>
+{% endif %}
+{% endfor %}
+Files:<br>
+{% for file in results %}
+{% if file.type != 'folder' %}
+<a class="download" href="/download/{{file.path}}">{{ file.name }} - {{ file.size|filesizeformat }}</a><br>
+{% endif %}
+{% endfor %}
+

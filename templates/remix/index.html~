@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>Bemix</title>
+    <link href='/site_media/jquery/css/custom-theme/jquery-ui-1.8.13.custom.css' rel='stylesheet' type='text/css' />
+    <link href='/site_media/remix_style.css' rel='stylesheet' type='text/css' />
+    <script type='text/javascript' src='/site_media/jquery/js/jquery.js'></script>
+    <script type='text/javascript' src='/site_media/jquery/js/jquery-ui.js'></script>
+    <link href='/site_media/js_player.css' rel='stylesheet' type='text/css' />
+
+    {% if user.type == 'email' %}
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+    <script type='text/javascript' src='/site_media/jwplayer/jwplayer.js'></script>
+    <script type='text/javascript' src='/site_media/remix_flash.js'></script>
+    <script type='text/javascript'>
+    $(document).ready(function() { start("{{ user.email }}"); if(!window.location.hash) {window.location.hash='{{ user.email }}';}})
+    </script>
+    {% endif %}
+
+    <script type='text/javascript' src='/site_media/remix.js'></script>
+    <script type="text/javascript">
+        var init_youtube = function(){inityoutube()}
+    </script>
+    <script type='text/javascript' src="https://apis.google.com/js/client.js?onload=init_youtube"></script>
+
+
+
+  </head>
+  <body>
+    <div id='wrap'>
+        <div id='topbar'>
+            Bemix
+            <select id='player'>
+                    {% for other in players %}
+                    <option>{{ other.name }}</option>
+                {% endfor %}
+            </select>
+            <div id='topbarright'>
+                    <div id='uploads_button'>Upload</div>
+                                <div id='repeat'>
+                                    <input type='radio' id='repeat_on' name='repeat' value='on' checked='checked'/><label for='repeat_on'>Repeat on</label>
+                                    <input type='radio' id='repeat_off' name='repeat' value='off' /><label for='repeat_off'>Repeat off</label>
+                                </div>
+                    <div id='volume'></div>
+            </div>
+        </div>
+        <div id='preferences'>
+                <div id='preferences_pane'>
+                <br />
+                {% if user.type == 'email' %}
+                <input type='checkbox' id='local_public' {% if local_public %} checked='checked' {% endif %} />
+                        <label for='local_public'>Make my local player ({{user.email}}) <strong>public</strong></label><br />
+                {% endif %}
+                Style: <select id='style'>
+                    {% for st in styles %}
+                    <option {% if st == style %} selected='selected' {% endif %}>{{ st }}</option>
+                {% endfor %}
+            </select><br /><br />
+                <input type='button' value='Update my preferences!' id='preferences_submit' /><br /><br />
+                </div>
+        </div>
+        <div id='controls'>
+                        <a href='javascript:command("prev")'><img id='prev' src='/site_media/prev.png' border='0'/></a>
+                        <a href='javascript:command("pause")'><img id='playpause' src='/site_media/play.png' border='0'/></a>
+                        <a href='javascript:command("next")'><img id='next' src='/site_media/next.png' border='0'/></a>
+                </div>
+                <div id='progressbar'><div id='progresstext'>00:00 / 00:00</div></div>
+                <div id='queue'>
+                        <ul id="sortable">
+                        </ul>
+                </div>
+                <div id='searchwrap'>
+                <div id='searchbox'>
+                    <label name='query'>Find song: <label>
+                        <input id='query' type='text' autofocus />
+                </div>
+                <div id='results'></div>
+                <div id='resultsyoutube'></div>
+                </div>
+            </div>
+    </div>
+    <div id="container">
+    </div>
+    <div id='uploads'>
+            <div id='uploads_back'>Back to player</div>
+            <iframe src="/uploader" style="width:100%; height:100% border:0"></iframe>
+        </div>
+  </body>
+</html>

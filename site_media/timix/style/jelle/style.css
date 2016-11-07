@@ -1,0 +1,16 @@
+body {
+    font-family: Verdana, Arial, sans;
+    font-size: 12px;
+}
+
+#left_pane {
+    background-color: #FFF9A8;
+    background-image: url(/site_media/timix/images/logo-black.png);
+    background-repeat: no-repeat;
+    background-position: 27.5px 10px;
+    border-right: 1px solid #000;
+}
+
+#state_pane {
+    border-bottom: 1px solid #000;
+}

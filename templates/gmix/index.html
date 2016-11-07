@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <title>Bemix</title>
+    
+    <link type='text/css' rel='stylesheet' href='/site_media/timix/style/layout.css' />
+    
+    <link type='text/css' rel='stylesheet' href='/site_media/timix/style/{{style}}/style.css' />
+    <link type='text/css' rel='stylesheet' href='/site_media/timix/style/{{style}}/jquery/jquery-ui.css' />
+    
+    <script type='text/javascript' src='/site_media/jquery/js/jquery.js'></script>
+    <script type='text/javascript' src='/site_media/jquery/js/jquery-ui.js'></script>
+    <script type='text/javascript' src='/site_media/timix/remix.js'></script>
+</head>
+<body>
+    <div id='wrap'>
+        <div id='left_pane'>
+            <select id='player'>
+            {% for player in players %}
+		        <option id='player_{{player.name}}'>{{player.name}}</option>
+			{% endfor %}
+		    </select>
+		    <div id='volume'></div>
+		    <div id='repeat'>	    
+                <input type='radio' id='repeat_on' name='repeat' value='on' /><label for='repeat_on'>Repeat on</label>
+                <input type='radio' id='repeat_off' name='repeat' value='off' /><label for='repeat_off'>Repeat off</label>
+            </div>
+            <img id='album_art' />
+        </div>
+        <div id='right_pane'>
+            <div id='state_pane'>
+                <div id='now_playing'>
+                    <div id='controls'>
+                    <img id='command_previous' src='/site_media/prev.png' />
+                    <img id='command_playpause' src='/site_media/play.png' />
+                    <img id='command_next' src='/site_media/next.png' />
+                    </div>
+                    <div id='progress'><div id='progress_text'>00:00/00:00</div></div>
+                    <div id='playing'></div>
+                </div>
+            </div>
+            <div id='queue_pane'>
+                <ul id='sortable'>
+                </ul>
+            </div>
+            <div id='explore_pane'>
+                <div id='tabs'>
+                    <ul>
+                        <li><a href='#search_tab'>Search</a></li>
+                        <li><a href='#browse_tab'>Browse</a></li>
+                    </ul>
+                    <div id='search_tab'>
+                        <input id='query' placeholder='Search for songs...' />
+                        <div id='results'>
+                        </div>
+                    </div>
+                    <div id='browse_tab'>
+                        <img src='http://profile.ak.fbcdn.net/hprofile-ak-snc4/23222_100000014003177_7914_n.jpg' />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

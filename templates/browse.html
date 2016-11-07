@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>HBF</title>
+  </head>
+  <body>
+    <a href="/">switch to searching</a><br>
+    <h1>Browsing {% for crumb in crumbs %}<a class="browse" href="/browse/{{ crumb.path }}">{{ crumb.name }}</a>/{% endfor %}</h1>
+    Subfolders:<br>
+    {% for file in files %}
+      {% if file.type == 'folder' %}
+        <a class="browse" href="/browse/{{file.path}}">{{ file.name }}</a><br>
+      {% endif %}
+    {% endfor %}
+    Files:<br>
+    {% for file in files %}
+      {% if file.type != 'folder' %}
+        <a class="download" href="/download/{{file.path}}">{{ file.name }} - {{ file.size|filesizeformat }}</a><br>
+      {% endif %}
+    {% endfor %}
+  </body>
+</html>

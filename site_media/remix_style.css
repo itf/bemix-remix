@@ -1,0 +1,211 @@
+body {
+	background: #2C3033;
+	font-family: Verdana, Tahoma, sans;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+	overflow-y: scroll;
+}
+
+a {
+	color: #3D88D9;
+}
+
+table {
+	font-size: 13px;
+	border: 0;
+	border-collapse: collapse;
+	width: 100%;
+}
+form {
+    display: inline;
+    margin: 0;
+    padding: none;
+}
+
+th {
+	border-top: 1px solid #DDD;
+	border-bottom: 1px solid #DDD;
+}
+
+tr:hover {
+	background: #4270A1;
+	color: #fff;
+	cursor: pointer;
+}
+
+input, select {
+    background: #000;
+	color: #CCF;
+	border: 1px solid #FFF;
+}
+
+select#player {
+	font-size: 24px;
+	height: 30px;
+}
+
+.rowtop {
+	background: #000 !important;
+	color: #fff;
+	cursor: default !important;
+}
+.row1 {
+	background: #222;
+	color: #fff;
+}
+.row2 {
+    background: #000;
+    color: #fff;
+}
+
+#wrap {
+	margin: auto;
+	width: 70%;
+	background-color: #111;
+	border: 1px solid #222;
+	color: #fff;
+}
+
+#topbar {
+    border-bottom: 1px solid #111;
+    background-color: #000;
+    background-image: url(/site_media/convenience.png);
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+#topbarright {
+    position: absolute;
+    top: 2px;
+    right: 15%;
+}
+
+#repeat {
+    font-size: 8px;
+    margin-top: 5px;
+    float: right;
+}
+
+#volume {
+    float: right;
+    margin: 10px;
+    width: 120px;
+    font-size: 10px;
+}
+
+#volume a {
+    outline:none;
+}
+
+#preferences_button {
+    float: right;
+    width: 25px;
+    margin-top: 5px;
+    margin-right: 4px;
+    font-size: 9px;
+}
+
+#uploads_button {
+    float: right;
+    width: 47px;
+    margin-top: 5px;
+    margin-right: 4px;
+    font-size: 9px;
+}
+
+#uploads {
+    position: absolute;
+    left: 15%;
+    right: 15%;
+    top: 0;
+    bottom: 0;
+    display: none;
+}
+
+#uploads iframe {
+    border: 0;
+    padding: none;
+    width: 100%;
+    height: 100%;
+}
+
+#uploads_back {
+    position: absolute;
+    right: 0;
+    top: 6px;
+    width: 150px;
+}
+
+#preferences {
+    width: 100%;
+    border:1px solid #ddd;
+    background-color: #444;
+    display: none;
+}
+
+#preferences_pane {
+    margin-left: 30px;
+}
+
+select#style {
+    height: 20px;
+    font-size: 13px;
+}
+
+#controls {
+    text-align: center;
+}
+
+#progressbar {
+    width: 95%;
+    height: 20px;
+    margin:auto;
+}
+
+#progresstext {
+    display: inline;
+    float: left;
+    margin-top: 4px;
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+}
+
+#queue {
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+#sortable { 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#sortable:hover {
+    cursor: move;
+}
+
+#sortable a {
+    color: #3D88D9 !important;
+}
+
+.ui-state-highlight { 
+    height: 14px; 
+    background: #2C3033 !important;
+}
+
+#searchbox {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align:center;
+	color: #fff;
+}
+
+#query {
+	background: #000;
+	color: #fff;
+	font-size: 24px;
+}
